@@ -9,10 +9,16 @@ public class ex02 {
         double value = 0;
         String str = "";
         while(run) {
+            System.out.printf("Operation: ");
             str = input.nextLine();
-            value = getResult(str);
-            System.out.println(value);
-            
+            try{
+                value = getResult(str);
+                System.out.println("Response: " + value);
+            }
+            catch(IllegalArgumentException e) {
+                System.out.println("Operacao nao reconhecida: " + e.getLocalizedMessage());
+            }
+            System.out.println();
         }
         input.close();
     }
@@ -20,8 +26,8 @@ public class ex02 {
     public static double getResult(String str) {
         Stack<Double> stack = new Stack<Double>();
         String parts[] = str.split(" ");
-        double op1;
-        double op2;
+        double op1 = 0;
+        double op2 = 0;
         for(int i = 0; i < parts.length; i++) {
             if(isNumeric(parts[i])){
                 stack.push(Double.parseDouble(parts[i]));
@@ -32,13 +38,12 @@ public class ex02 {
                     op2 = stack.pop();
                 }
                 catch(Exception e) {
-                    throw new IllegalArgumentException("Erro");
+                    throw new IllegalArgumentException("Relacao entre numeros e operadores nao aceite");
                 }
-                return getValue(op1, parts[i], op2);
+                stack.push(getValue(op1, parts[i], op2));
             }
         }
-
-        return 1;
+        return stack.pop();
     }
 
     public static double getValue(double op1, String operation, double op2) {
@@ -54,7 +59,7 @@ public class ex02 {
             case "=":
                 return op2;
             default:
-                throw new IllegalArgumentException("Operacao nao reconhecida");
+                throw new IllegalArgumentException("Operador \"" + operation + "\" nao reconhecido");
         }
     }
 
