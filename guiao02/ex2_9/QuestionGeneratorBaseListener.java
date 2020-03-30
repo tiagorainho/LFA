@@ -27,25 +27,13 @@ public class QuestionGeneratorBaseListener implements QuestionGeneratorListener 
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStatComment(QuestionGeneratorParser.StatCommentContext ctx) { }
+	@Override public void enterStat(QuestionGeneratorParser.StatContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStatComment(QuestionGeneratorParser.StatCommentContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterStatQuestion(QuestionGeneratorParser.StatQuestionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitStatQuestion(QuestionGeneratorParser.StatQuestionContext ctx) { }
+	@Override public void exitStat(QuestionGeneratorParser.StatContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

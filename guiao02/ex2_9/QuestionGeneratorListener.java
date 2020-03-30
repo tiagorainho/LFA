@@ -17,29 +17,15 @@ public interface QuestionGeneratorListener extends ParseTreeListener {
 	 */
 	void exitProgram(QuestionGeneratorParser.ProgramContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code StatComment}
-	 * labeled alternative in {@link QuestionGeneratorParser#stat}.
+	 * Enter a parse tree produced by {@link QuestionGeneratorParser#stat}.
 	 * @param ctx the parse tree
 	 */
-	void enterStatComment(QuestionGeneratorParser.StatCommentContext ctx);
+	void enterStat(QuestionGeneratorParser.StatContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code StatComment}
-	 * labeled alternative in {@link QuestionGeneratorParser#stat}.
+	 * Exit a parse tree produced by {@link QuestionGeneratorParser#stat}.
 	 * @param ctx the parse tree
 	 */
-	void exitStatComment(QuestionGeneratorParser.StatCommentContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code StatQuestion}
-	 * labeled alternative in {@link QuestionGeneratorParser#stat}.
-	 * @param ctx the parse tree
-	 */
-	void enterStatQuestion(QuestionGeneratorParser.StatQuestionContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code StatQuestion}
-	 * labeled alternative in {@link QuestionGeneratorParser#stat}.
-	 * @param ctx the parse tree
-	 */
-	void exitStatQuestion(QuestionGeneratorParser.StatQuestionContext ctx);
+	void exitStat(QuestionGeneratorParser.StatContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link QuestionGeneratorParser#questionBlock}.
 	 * @param ctx the parse tree

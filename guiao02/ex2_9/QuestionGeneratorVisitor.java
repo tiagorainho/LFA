@@ -16,19 +16,11 @@ public interface QuestionGeneratorVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitProgram(QuestionGeneratorParser.ProgramContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code StatComment}
-	 * labeled alternative in {@link QuestionGeneratorParser#stat}.
+	 * Visit a parse tree produced by {@link QuestionGeneratorParser#stat}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitStatComment(QuestionGeneratorParser.StatCommentContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code StatQuestion}
-	 * labeled alternative in {@link QuestionGeneratorParser#stat}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitStatQuestion(QuestionGeneratorParser.StatQuestionContext ctx);
+	T visitStat(QuestionGeneratorParser.StatContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link QuestionGeneratorParser#questionBlock}.
 	 * @param ctx the parse tree
